@@ -16,7 +16,7 @@ export const loadUsers = () => async (dispatch, getState) => {
 
 export const selectUser = (id) => (dispatch, getState) => {
   const user = getState().users.userList.filter((user) => {
-    return user.id == id;
+    return parseInt(user.id) === parseInt(id);
   })[0];
 
   dispatch({
